@@ -1,89 +1,42 @@
 # Project Title
 
-One Paragraph of project description goes here
+The famous Paper Rock Scissors game as part of a hiring process under TTD.
 
-## Getting Started
+# Deployment
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+You can visit the deployed website [here]().
 
-### Prerequisites
+# Running the tests
 
-What things you need to install the software and how to install them
+After you fork the repository, run `yarn init` in your Terminal and make sure you are in the project folder. Then run `yarn add webpack webpack-cli babel-loader babel-preset-env babel-polyfill babel-register --dev`. That should install all the necessary dependencies on your computer.
 
-```
-Give examples
-```
+Then, from your Terminal go to the project folder and run `yarn cucumber`.
 
-### Installing
+During the time we were building the project we saw that cucumber is a bit unreliable at times. Although all scenarios/tests are passing, do not be surprised if you run them and encounter failures. The codebase is solid and the files around the index.html work as expected.
 
-A step by step series of examples that tell you how to get a development env running
+# Tested with
+[YARN](https://www.npmjs.com/package/yarn) - Fast, reliable, and secure dependency management.
 
-Say what the step will be
+[CUCUMBER](https://cucumber.io/) - Tools & techniques that elevate teams to greatness.
 
-```
-Give the example
-```
+# Built With
 
-And repeat
+* HTML
+* CSS
+* JavaScript
 
-```
-until finished
-```
+# Authors
 
-End with an example of getting some data out of the system or using it for a little demo
+* **George Tomaras** - [raptorf1](https://gtomaras-portfolio.netlify.com/)
 
-## Running the tests
+# License
 
-Explain how to run the automated tests for this system
+This project is licensed under the MIT License.
 
-### Break down into end to end tests
+# Acknowledgments
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
-
+* Kudos to [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) for the README template.
+* [W3 Schools](https://www.w3schools.com/) - 
+The World's Largest Web Developer Site.
+* [Tailwind](https://tailwindcss.com/docs/what-is-tailwind) - A utility-first CSS framework for rapidly building custom user interfaces.
+* [StackOverflow](https://stackoverflow.com/) - Learn, Share, Build.
