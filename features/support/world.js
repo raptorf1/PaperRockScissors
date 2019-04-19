@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer')
 
 const HOME_PAGE = 'http://localhost:3000'
 
-class AddressBookWorld {
+class PaperRockScissorsWorld {
   constructor() {}
 
   // Open the home page using puppeteer
@@ -39,8 +39,8 @@ class AddressBookWorld {
 
   btnSelectorFromName(btnName) {
     switch (btnName) {
-      case 'add contact':
-        return '#add-contact'
+      case 'play':
+        return '#play'
         break
       case 'save contact':
         return '#save-contact'
@@ -76,6 +76,12 @@ class AddressBookWorld {
     expect(actualContent).to.be.eq(null)
   }
 
+  async pageHasVariousTextContent (expectedContent) {
+    const pageContent = await this.page.content()
+    const actualContent = pageContent.match(expectedContent)[0]
+    expect(actualContent).to.be.oneOf(["Paper", "Rock", "Scissors"])
+  }
+
 }
 
-setWorldConstructor(AddressBookWorld)
+setWorldConstructor(PaperRockScissorsWorld)
