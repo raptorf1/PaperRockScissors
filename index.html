@@ -33,14 +33,15 @@
       <div class="w-full lg:w-1/4 md:w-1/2">
         <h3 class="text-center">Player</h3>
         <br>
-        <p class="text-center">Make your choise and press GO!</p>
         <br>
-        <select id="playerSelect" class="text-center border-2 border-solid border-red rounded-lg ml-12 p-1">
-          <option value="Paper">Paper</option>
-          <option value="Rock">Rock</option>
-          <option value="Scissors">Scissors</option>
-        </select>
-        <button id="play" onClick="Play()"class="bg-blue hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue rounded">GO</button>
+        <p class="text-center">Make your choise!</p>
+        <br>
+        <br>
+        <div class="flex justify-center">
+          <img src="scissors.png" onclick="PlayScissors()" width="50"></img>
+          <img src="rock.png" onclick="PlayRock()" width="50"></img>
+          <img src="paper.png" onclick="PlayPaper()" width="50"></img>
+        </div>
       </div>
    
       <div class="w-full lg:w-2/4 md:w-1/2">

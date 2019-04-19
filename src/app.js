@@ -1,21 +1,32 @@
-Play = () => {
+PlayScissors = () => {
     const choises = ["Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors"];
     var computer = choises[Math.floor(Math.random() * 30)];
     let showResult = document.getElementById("computerSelect");
     showResult.innerHTML = computer;
-    Winner();
+    let computerSelection = document.getElementById("computerSelect").innerHTML;
+    if (computerSelection == "Paper") { document.getElementById("winner").innerHTML = "Congrats! You win.";}
+        else if (computerSelection == "Rock") { document.getElementById("winner").innerHTML = "Too bad! Computer wins.";}
+        else if (computerSelection == "Scissors") { document.getElementById("winner").innerHTML = "No winners! It's a tie.";}
 }
 
-Winner = () => {
-    let playerSelection = document.getElementById("playerSelect").value;
+PlayRock = () => {
+    const choises = ["Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors"];
+    var computer = choises[Math.floor(Math.random() * 30)];
+    let showResult = document.getElementById("computerSelect");
+    showResult.innerHTML = computer;
     let computerSelection = document.getElementById("computerSelect").innerHTML;
-    if (playerSelection == "Paper" && computerSelection == "Paper") { document.getElementById("winner").innerHTML = "No winners! It's a tie.";}
-        else if (playerSelection == "Paper" && computerSelection == "Rock") { document.getElementById("winner").innerHTML = "Congrats! You win!";}
-        else if (playerSelection == "Paper" && computerSelection == "Scissors") { document.getElementById("winner").innerHTML = "Too bad! Computer wins.";}
-        else if (playerSelection == "Rock" && computerSelection == "Paper") { document.getElementById("winner").innerHTML = "Too bad! Computer wins.";}
-        else if (playerSelection == "Rock" && computerSelection == "Rock") { document.getElementById("winner").innerHTML = "No winners! It's a tie.";}
-        else if (playerSelection == "Rock" && computerSelection == "Scissors") { document.getElementById("winner").innerHTML = "Congrats! You win.";}
-        else if (playerSelection == "Scissors" && computerSelection == "Paper") { document.getElementById("winner").innerHTML = "Congrats! You win.";}
-        else if (playerSelection == "Scissors" && computerSelection == "Rock") { document.getElementById("winner").innerHTML = "Too bad! Computer wins.";}
-        else if (playerSelection == "Scissors" && computerSelection == "Scissors") { document.getElementById("winner").innerHTML = "No winners! It's a tie.";}
+    if (computerSelection == "Paper") { document.getElementById("winner").innerHTML = "Too bad! Computer wins.";}
+        else if (computerSelection == "Rock") { document.getElementById("winner").innerHTML = "No winners! It's a tie.";}
+        else if (computerSelection == "Scissors") { document.getElementById("winner").innerHTML = "Congrats! You win.";}
+}
+
+PlayPaper = () => {
+    const choises = ["Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors"];
+    var computer = choises[Math.floor(Math.random() * 30)];
+    let showResult = document.getElementById("computerSelect");
+    showResult.innerHTML = computer;
+    let computerSelection = document.getElementById("computerSelect").innerHTML;
+    if (computerSelection == "Paper") { document.getElementById("winner").innerHTML = "No winners! It's a tie.";}
+        else if (computerSelection == "Rock") { document.getElementById("winner").innerHTML = "Congrats! You win.";}
+        else if (computerSelection == "Scissors") { document.getElementById("winner").innerHTML = "Too bad! Computer wins.";}
 }
