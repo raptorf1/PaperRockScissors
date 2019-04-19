@@ -10,6 +10,6 @@ Feature: Play a game
       And I should see "Computer"
       And I should see "Winner"
       And I should see "Result"
-      When I click "Play"
+      When I click "play"
       Then I should see "Paper" or "Rock" or "Scissors"
       

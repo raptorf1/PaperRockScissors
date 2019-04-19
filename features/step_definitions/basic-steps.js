@@ -43,3 +43,7 @@ Then('I fill in {string} with {string}', async function(field, content) {
 Then('I should not see {string}', async function(content) {
   return await this.pageDoesNotHaveTextContent(content)
 })
+
+Then('I should see {string} or {string} or {string}', async function(content) {
+  return await this.pageHasVariousTextContent(content1, content2, content3) 
+})
