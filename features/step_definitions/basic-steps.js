@@ -45,5 +45,5 @@ Then('I should not see {string}', async function(content) {
 })
 
 Then('I should see {string} or {string} or {string}', async function(content) {
-  return await this.pageHasVariousTextContent(content1, content2, content3) 
+  return await this.pageHasVariousTextContent(content) 
 })

@@ -76,10 +76,10 @@ class PaperRockScissorsWorld {
     expect(actualContent).to.be.eq(null)
   }
 
-  async pageHasVariousTextContent (expectedContent1,expectedContent2,expectedContent3) {
+  async pageHasVariousTextContent (expectedContent) {
     const pageContent = await this.page.content()
-    const actualContent = pageContent.match(expectedContent1, expectedContent2, expectedContent3)[0]
-    expect(actualContent).to.be.oneOf(expectedContent1, expectedContent2, expectedContent3)
+    const actualContent = pageContent.match(expectedContent)[0]
+    expect(actualContent).to.be.oneOf(["Paper", "Rock", "Scissors"])
   }
 
 }
