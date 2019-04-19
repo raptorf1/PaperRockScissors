@@ -31,10 +31,10 @@
 
     <div class="flex items-center flex-wrap mb-4">
       <div class="w-full lg:w-1/4 md:w-1/2">
-        <h3 class="text-center">Player</h3>
+        <h3 class="text-center">Player Chooses</h3>
         <br>
         <br>
-        <p class="text-center">Make your choise!</p>
+        <p id="playerChoise" class="text-red-dark text-center text-2xl font-extrabold"></p>
         <br>
         <br>
         <div class="flex justify-center">
@@ -47,13 +47,22 @@
       <div class="w-full lg:w-2/4 md:w-1/2">
         <h2 class="text-center">And the Winner is.....</h2>
         <br>
+        <br>
         <p id="winner" class="text-center"></p>
+        <br>
+        <br>
+        <div class="flex justify-center">
+        <img id="playerWins" src="playerWins.png" width="100" style="display:none"></img>
+        <img id="playerLooses" src="playerLooses.png" width="100" style="display:none"></img>
+        <img id="tie" src="tie.png" width="100" style="display:none"></img>
+        </div>
       </div>
 
       <div class="w-full lg:w-1/4 md:w-1/2">
         <h3 class="text-center">Computer chooses</h3>
         <br>
-        <p id="computerSelect" class="text-center text-2xl font-extrabold"></p>
+        <br>
+        <p id="computerSelect" class="text-red-dark text-center text-2xl font-extrabold"></p>
       </div>
     </div>
   </div>
