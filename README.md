@@ -4,7 +4,7 @@ The famous Paper Rock Scissors game as part of a hiring process under TTD.
 
 # Deployment
 
-You can visit the deployed website [here]().
+You can visit the deployed website [here](https://paper-rock-scissors.netlify.com/).
 
 # Running the tests
 
