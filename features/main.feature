@@ -5,11 +5,14 @@ Feature: Play a game
 
     Scenario: User visits the site to play the game
       Given I visit the site
-      Then I should see "Paper - Rock - Scissors Game"
+      Then I should see "Paper"
+      Then I should see "Rock"
+      Then I should see "Scissors"
+      Then I should see "Game"
       And I should see "Player"
       And I should see "Computer"
-      And I should see "Winner"
-      And I should see "Result"
+      And I should see "And the Winner is"
+      And I should see "Please Select"
       When I click "play"
       Then I should see "Paper" or "Rock" or "Scissors"
       

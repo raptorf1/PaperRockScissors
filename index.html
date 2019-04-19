@@ -33,32 +33,35 @@
       <div class="w-full lg:w-1/4 md:w-1/2">
         <h3 class="text-center">Player</h3>
         <br>
-        <p class="text-center">Make your choise and click <i>Play</i> !</p>
+        <p class="text-center">Make your choise and let's go!</p>
         <br>
-        <select class="text-center border-2 border-solid border-red rounded-lg ml-12 p-1">
+        <select id="playerSelect" class="text-center border-2 border-solid border-red rounded-lg ml-12 p-1">
+          <option value="select">Please Select</option>
           <option value="paper">Paper</option>
           <option value="rock">Rock</option>
           <option value="scissors">Scissors</option>
-        </select>
-            
+        </select>            
+      </div>
+   
+      <div class="w-full lg:w-2/4 md:w-1/2">
+        <h2 class="text-center">And the Winner is.....</h2>
+        <button id="play" hidden></button>
+        <br>
+        <p id="winner" class="text-center"></p>
       </div>
 
-  <h4>Computer</h4>
-
-  <h6>Winner</h6>
-
-  <h6>Result</h6>
-
-  <button id="play">Play</button>
-  
-
-
-
-</div>
-
-
+      <div class="w-full lg:w-1/4 md:w-1/2">
+        <h3 class="text-center">Computer</h3>
+        <br>
+        <p class="text-center">Computer chooses!</p>
+        <br>
+        <p id="computerSelect" class="text-center"><b></b></p>
+      </div>
+    </div>
+  </div>
 
   <script src="./dist/bundle.js"></script>
+  
 </body>
 
 </html>
