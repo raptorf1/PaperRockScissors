@@ -30,26 +30,19 @@ class PaperRockScissorsWorld {
     await this.page.click(btnSelector)
   }
 
-  async fillFormField(field, content) {
-    const inputSelector = `#contact-${field}`
-    await this.page.waitForSelector(inputSelector)
-    this.inputElement = await this.page.$(inputSelector)
-    await this.inputElement.type(content)
-  }
-
   btnSelectorFromName(btnName) {
     switch (btnName) {
-      case 'play':
-        return '#play'
+      case 'scissors':
+        return '#scissors'
         break
-      case 'save contact':
-        return '#save-contact'
+      case 'rock':
+        return '#rock'
         break
-      case 'delete contact':
-        return '#delete-contact'
+      case 'paper':
+        return '#paper'
         break
-      case 'edit contact':
-        return '#edit-contact'
+      case 'reset':
+        return '#reset'
         break
       case 'delete':
         return '#button_card_delete'
@@ -63,23 +56,11 @@ class PaperRockScissorsWorld {
     }
   }
 
-  async checkContactStorageCount(expectedCount) {
+  async checkContactSessionStorageCount(expectedCount) {
     const actualCount = await this.page.evaluate(
-      () => JSON.parse(window.localStorage.getItem('contacts')).length
+      () => window.sessionStorage.length
     )
     expect(actualCount).to.be.eq(expectedCount)
-  }
-
-  async pageDoesNotHaveTextContent(unexpectedContent) {
-    const pageContent = await this.page.content()
-    let actualContent = pageContent.match(unexpectedContent)
-    expect(actualContent).to.be.eq(null)
-  }
-
-  async pageHasVariousTextContent (expectedContent) {
-    const pageContent = await this.page.content()
-    const actualContent = pageContent.match(expectedContent)[0]
-    expect(actualContent).to.be.oneOf(["Paper", "Rock", "Scissors"])
   }
 
 }
