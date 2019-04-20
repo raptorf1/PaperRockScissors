@@ -42,13 +42,52 @@ Emoji = () => {
     if (winner == "No winners! It's a tie.") {
         document.getElementById("tie").style.display = "block";
         document.getElementById("playerWins").style.display = "none";
-        document.getElementById("playerLooses").style.display = "none";}
+        document.getElementById("playerLooses").style.display = "none";
+        window.sessionStorage.setItem(Date.now(), "t");}
         else if (winner == "Congrats! You win.") {
             document.getElementById("playerWins").style.display = "block";
             document.getElementById("tie").style.display = "none";
-            document.getElementById("playerLooses").style.display = "none";}
+            document.getElementById("playerLooses").style.display = "none";
+            window.sessionStorage.setItem(Date.now(), "p");}
         else if (winner == "Too bad! Computer wins.") {
             document.getElementById("playerLooses").style.display = "block";
             document.getElementById("tie").style.display = "none";
-            document.getElementById("playerWins").style.display = "none";}
+            document.getElementById("playerWins").style.display = "none";
+            window.sessionStorage.setItem(Date.now(), "c");}
+    CalculatePoints()
+    Thumbs()
+}
+
+CalculatePoints = () => {
+    var arr = Object.values(window.sessionStorage);
+    document.getElementById("scorePlayer").innerHTML = `Player ${arr.filter(CheckPlayerWins).length}`;
+    document.getElementById("scoreComputer").innerHTML = `Computer ${arr.filter(CheckComputerWins).length}`;
+}
+
+CheckComputerWins = (string) => {return string == "c";}
+
+CheckPlayerWins = (string) => {return string == "p";}
+
+CheckTie = (string) => {return string == "t";}
+
+Thumbs = () => {
+    const computerNumber = Number(document.getElementById("scoreComputer").innerHTML.replace( /^\D+/g, ''));
+    const PlayerNumber = Number(document.getElementById("scorePlayer").innerHTML.replace( /^\D+/g, ''));
+    if (computerNumber > PlayerNumber) {
+        document.getElementById("thumbsDown").style.display = "block";
+        document.getElementById("thumbsUp").style.display = "none";
+        document.getElementById("thumbsMiddle").style.display = "none";}
+        else if (computerNumber == PlayerNumber) {
+            document.getElementById("thumbsDown").style.display = "none";
+            document.getElementById("thumbsUp").style.display = "none";
+            document.getElementById("thumbsMiddle").style.display = "block";}
+        else {
+            document.getElementById("thumbsDown").style.display = "none";
+            document.getElementById("thumbsUp").style.display = "block";
+            document.getElementById("thumbsMiddle").style.display = "none";}
+}
+
+Reset = () => {
+    window.sessionStorage.clear();
+    window.location.reload(true);
 }
