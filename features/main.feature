@@ -1,4 +1,5 @@
 Feature: Play a game
+  
   As a user
   In order to have fun
   I would like to play the game Paper-Rock-Scissors
