@@ -55,12 +55,13 @@ Emoji = () => {
             document.getElementById("playerWins").style.display = "none";
             window.sessionStorage.setItem(Date.now(), "c");}
     CalculatePoints()
+    Thumbs()
 }
 
 CalculatePoints = () => {
     var arr = Object.values(window.sessionStorage);
-    document.getElementById("scorePlayer").innerHTML = arr.filter(CheckPlayerWins).length;
-    document.getElementById("scoreComputer").innerHTML = arr.filter(CheckComputerWins).length;
+    document.getElementById("scorePlayer").innerHTML = `Player ${arr.filter(CheckPlayerWins).length}`;
+    document.getElementById("scoreComputer").innerHTML = `Computer ${arr.filter(CheckComputerWins).length}`;
 }
 
 CheckComputerWins = (string) => {return string == "c";}
@@ -68,3 +69,25 @@ CheckComputerWins = (string) => {return string == "c";}
 CheckPlayerWins = (string) => {return string == "p";}
 
 CheckTie = (string) => {return string == "t";}
+
+Thumbs = () => {
+    const computerNumber = Number(document.getElementById("scoreComputer").innerHTML.replace( /^\D+/g, ''));
+    const PlayerNumber = Number(document.getElementById("scorePlayer").innerHTML.replace( /^\D+/g, ''));
+    if (computerNumber > PlayerNumber) {
+        document.getElementById("thumbsDown").style.display = "block";
+        document.getElementById("thumbsUp").style.display = "none";
+        document.getElementById("thumbsMiddle").style.display = "none";}
+        else if (computerNumber == PlayerNumber) {
+            document.getElementById("thumbsDown").style.display = "none";
+            document.getElementById("thumbsUp").style.display = "none";
+            document.getElementById("thumbsMiddle").style.display = "block";}
+        else {
+            document.getElementById("thumbsDown").style.display = "none";
+            document.getElementById("thumbsUp").style.display = "block";
+            document.getElementById("thumbsMiddle").style.display = "none";}
+}
+
+Reset = () => {
+    window.sessionStorage.clear();
+    window.location.reload(true);
+}
