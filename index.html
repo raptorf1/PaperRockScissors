@@ -32,38 +32,45 @@
     <div class="flex items-strech flex-wrap mb-4">
       <div class="w-full lg:w-1/4 md:w-1/2 border-blue-dark border-r-2 border-l-2 border-b-2 pt-5 pb-5">
         <h3 class="text-center">Player Chooses</h3>
-        <br>
-        <br>
         <p id="playerChoise" class="text-red-dark text-center text-2xl font-extrabold"></p>
         <br>
-        <br>
         <div class="ml-20">
-        <img src="scissors.png" onclick="PlayScissors()" width="50"></img>
-        <img src="rock.png" onclick="PlayRock()" width="50"></img>
-        <img src="paper.png" onclick="PlayPaper()" width="50"></img>
+        <img src="scissors.png" onclick="PlayScissors()" width="40"></img>
+        <img src="rock.png" onclick="PlayRock()" width="40"></img>
+        <img src="paper.png" onclick="PlayPaper()" width="40"></img>
         </div>
       </div>
    
-      <div class="w-full lg:w-2/4 md:w-1/2 border-blue-dark border-r-2 border-l-2 border-b-2 pt-5 pb-5">
+      <div class="w-full lg:w-1/4 md:w-1/2 border-blue-dark border-r-2 border-l-2 border-b-2 pt-5 pb-5">
         <h2 class="text-center">And the Winner is.....</h2>
-        <br>
         <br>
         <p id="winner" class="text-center"></p>
         <br>
         <div class="ml-20">
-        <img id="playerWins" src="playerWins.png" width="100" style="display:none"></img>
-        <img id="playerLooses" src="playerLooses.png" width="100" style="display:none"></img>
-        <img id="tie" src="tie.png" width="100" style="display:none"></img>
+        <img id="playerWins" src="playerWins.png" width="70" style="display:none"></img>
+        <img id="playerLooses" src="playerLooses.png" width="70" style="display:none"></img>
+        <img id="tie" src="tie.png" width="70" style="display:none"></img>
         </div>
       </div>
 
       <div class="w-full lg:w-1/4 md:w-1/2 border-blue-dark border-l-2 border-r-2 border-b-2 pt-5 pb-5">
         <h3 class="text-center">Computer chooses</h3>
-        <br>
-        <br>
         <p id="computerSelect" class="text-red-dark text-center text-2xl font-extrabold"></p>
       </div>
-    </div>
+
+      <div class="w-full lg:w-1/4 md:w-1/2 border-blue-dark border-r-2 border-l-2 border-b-2 pt-5 pb-5">
+        <h2 class="text-center text-purple-dark text-3xl tracking-wide font-serif">Score</h2>
+        <br>
+        <div class="w-full border-blue-dark border-b-2 pl-5 pb-5">
+          <p><i>PLAYER</i></p>
+          <h3><b>35</b></h3>
+        </div>
+        <div class="w-full border-blue-dark pr-5 pt-5">
+          <p class="text-right"><i>COMPUTER</i></p>
+          <h3 class="text-right"><b>50</b></h3>
+        </div>
+      </div>
+    </div> 
   </div>
 
   <script src="./dist/bundle.js"></script>
