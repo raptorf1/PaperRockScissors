@@ -91,3 +91,7 @@ Reset = () => {
     window.sessionStorage.clear();
     window.location.reload(true);
 }
+
+PrivacyMessage = () => {
+    alert("Your privacy is of the utmost importance for us. All scores/stats data of the game, are only stored in the Session Storage of your browser and are deleted whenever you close the tab. No data is left on your device.");
+}
