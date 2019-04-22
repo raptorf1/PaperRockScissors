@@ -18,8 +18,10 @@ Feature: Play a game
       And I should see "Computer 0"
       When I click "scissors"
       Then I should see "Scissors"
+      Then the session storage length must be 1
       When I click "rock"
       Then I should see "Rock"
+      Then the session storage length must be 2
       When I click "paper"
       Then I should see "Paper"
       Then the session storage length must be 3
