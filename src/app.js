@@ -2,6 +2,8 @@ const choises = ["Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","
 const idWinner = document.getElementById("winner");
 const showResult = document.getElementById("computerSelect");
 const idPlayerChoise = document.getElementById("playerChoise");
+const idScorePlayer = document.getElementById("scorePlayer");
+const idScoreComputer = document.getElementById("scoreComputer");
 
 PlayScissors = () => {
     var computer = choises[Math.floor(Math.random() * 30)];
@@ -57,8 +59,8 @@ Emoji = () => {
 
 CalculatePoints = () => {
     var arr = Object.values(window.sessionStorage);
-    document.getElementById("scorePlayer").innerHTML = `Player ${arr.filter(CheckPlayerWins).length}`;
-    document.getElementById("scoreComputer").innerHTML = `Computer ${arr.filter(CheckComputerWins).length}`;
+    idScorePlayer.innerHTML = `Player ${arr.filter(CheckPlayerWins).length}`;
+    idScoreComputer.innerHTML = `Computer ${arr.filter(CheckComputerWins).length}`;
 }
 
 CheckComputerWins = (string) => {return string == "c";}
@@ -68,8 +70,8 @@ CheckPlayerWins = (string) => {return string == "p";}
 CheckTie = (string) => {return string == "t";}
 
 Thumbs = () => {
-    const computerNumber = Number(document.getElementById("scoreComputer").innerHTML.replace( /^\D+/g, ''));
-    const PlayerNumber = Number(document.getElementById("scorePlayer").innerHTML.replace( /^\D+/g, ''));
+    const computerNumber = Number(idScoreComputer.innerHTML.replace( /^\D+/g, ''));
+    const PlayerNumber = Number(idScorePlayer.innerHTML.replace( /^\D+/g, ''));
     if (computerNumber > PlayerNumber) {
         document.getElementById("thumbsDown").style.display = "block";
         document.getElementById("thumbsUp").style.display = "none";
