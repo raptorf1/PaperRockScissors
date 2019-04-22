@@ -1,55 +1,52 @@
+const choises = ["Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors"];
+const idWinner = document.getElementById("winner");
+const showResult = document.getElementById("computerSelect");
+const idPlayerChoise = document.getElementById("playerChoise");
+
 PlayScissors = () => {
-    const choises = ["Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors"];
     var computer = choises[Math.floor(Math.random() * 30)];
-    let showResult = document.getElementById("computerSelect");
     showResult.innerHTML = computer;
-    document.getElementById("playerChoise").innerHTML = "Scissors";
-    let computerSelection = document.getElementById("computerSelect").innerHTML;
-    if (computerSelection == "Paper") { document.getElementById("winner").innerHTML = "Congrats! You win.";}
-        else if (computerSelection == "Rock") { document.getElementById("winner").innerHTML = "Too bad! Computer wins.";}
-        else if (computerSelection == "Scissors") { document.getElementById("winner").innerHTML = "No winners! It's a tie.";}
+    idPlayerChoise.innerHTML = "Scissors";
+    if (showResult.innerHTML == "Paper") { idWinner.innerHTML = "Congrats! You win.";}
+        else if (showResult.innerHTML == "Rock") { idWinner.innerHTML = "Too bad! Computer wins.";}
+        else if (showResult.innerHTML == "Scissors") { idWinner.innerHTML = "No winners! It's a tie.";}
     Emoji()
 }
 
 PlayRock = () => {
-    const choises = ["Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors"];
     var computer = choises[Math.floor(Math.random() * 30)];
     let showResult = document.getElementById("computerSelect");
     showResult.innerHTML = computer;
-    document.getElementById("playerChoise").innerHTML = "Rock";
-    let computerSelection = document.getElementById("computerSelect").innerHTML;
-    if (computerSelection == "Paper") { document.getElementById("winner").innerHTML = "Too bad! Computer wins.";}
-        else if (computerSelection == "Rock") { document.getElementById("winner").innerHTML = "No winners! It's a tie.";}
-        else if (computerSelection == "Scissors") { document.getElementById("winner").innerHTML = "Congrats! You win.";}
+    idPlayerChoise.innerHTML = "Rock";
+    if (showResult.innerHTML == "Paper") { idWinner.innerHTML = "Too bad! Computer wins.";}
+        else if (showResult.innerHTML == "Rock") { idWinner.innerHTML = "No winners! It's a tie.";}
+        else if (showResult.innerHTML == "Scissors") { idWinner.innerHTML = "Congrats! You win.";}
     Emoji()
 }
 
 PlayPaper = () => {
-    const choises = ["Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors","Paper","Rock", "Scissors"];
     var computer = choises[Math.floor(Math.random() * 30)];
     let showResult = document.getElementById("computerSelect");
     showResult.innerHTML = computer;
-    document.getElementById("playerChoise").innerHTML = "Paper";
-    let computerSelection = document.getElementById("computerSelect").innerHTML;
-    if (computerSelection == "Paper") { document.getElementById("winner").innerHTML = "No winners! It's a tie.";}
-        else if (computerSelection == "Rock") { document.getElementById("winner").innerHTML = "Congrats! You win.";}
-        else if (computerSelection == "Scissors") { document.getElementById("winner").innerHTML = "Too bad! Computer wins.";}
+    idPlayerChoise.innerHTML = "Paper";
+    if (showResult.innerHTML == "Paper") { idWinner.innerHTML = "No winners! It's a tie.";}
+        else if (showResult.innerHTML == "Rock") { idWinner.innerHTML = "Congrats! You win.";}
+        else if (showResult.innerHTML == "Scissors") { idWinner.innerHTML = "Too bad! Computer wins.";}
     Emoji()
 }
 
 Emoji = () => {
-    const winner = document.getElementById("winner").innerHTML;
-    if (winner == "No winners! It's a tie.") {
+    if (idWinner.innerHTML == "No winners! It's a tie.") {
         document.getElementById("tie").style.display = "block";
         document.getElementById("playerWins").style.display = "none";
         document.getElementById("playerLooses").style.display = "none";
         window.sessionStorage.setItem(Date.now(), "t");}
-        else if (winner == "Congrats! You win.") {
+        else if (idWinner.innerHTML == "Congrats! You win.") {
             document.getElementById("playerWins").style.display = "block";
             document.getElementById("tie").style.display = "none";
             document.getElementById("playerLooses").style.display = "none";
             window.sessionStorage.setItem(Date.now(), "p");}
-        else if (winner == "Too bad! Computer wins.") {
+        else if (idWinner.innerHTML == "Too bad! Computer wins.") {
             document.getElementById("playerLooses").style.display = "block";
             document.getElementById("tie").style.display = "none";
             document.getElementById("playerWins").style.display = "none";
