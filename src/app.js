@@ -94,3 +94,20 @@ Reset = () => {
 PrivacyMessage = () => {
     alert("Your privacy is of the utmost importance for us. All scores/stats data of the game, are only stored in the Session Storage of your browser and are deleted whenever you close the tab. No data is left on your device.");
 }
+
+ViewStats = () => {
+    const data = Object.values(window.sessionStorage);
+    const games = data.length;
+    const playerWins = data.filter(CheckPlayerWins).length;
+    const computerWins = data.filter(CheckComputerWins).length;
+    const ties = data.filter(CheckTie).length;
+    const playerWinRatio = ((playerWins/games)*100).toFixed(2);
+    const computerWinRatio = ((computerWins/games)*100).toFixed(2);
+    const tieRatio = ((ties/games)*100).toFixed(2);
+    if (games == 0) {
+        alert("No games are played yet. Start playing and good luck!");
+    }
+    else {
+        alert(`You played ${games} games. You won ${playerWins} games. Computer won ${computerWins} games. There were ${ties} ties. Your winning ratio is ${playerWinRatio}%. Computer's winning ratio is ${computerWinRatio}%. Ties occured ${tieRatio}%.`);
+    }
+}
