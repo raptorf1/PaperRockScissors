@@ -18,13 +18,13 @@ Feature: Play a game
       And I should see "Computer 0"
       When I click "scissors"
       Then I should see "Scissors"
-      Then the session storage length must be 1
+      Then the session storage length must be 3
       When I click "rock"
       Then I should see "Rock"
-      Then the session storage length must be 2
+      Then the session storage length must be 6
       When I click "paper"
       Then I should see "Paper"
-      Then the session storage length must be 3
+      Then the session storage length must be 9
       When I click "reset"
       Then the session storage length must be 0
       And I should see "Player 0"

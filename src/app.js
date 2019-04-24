@@ -9,9 +9,16 @@ PlayScissors = () => {
     var computer = choises[Math.floor(Math.random() * 30)];
     showResult.innerHTML = computer;
     idPlayerChoise.innerHTML = "Scissors";
-    if (showResult.innerHTML == "Paper") { idWinner.innerHTML = "Congrats! You win.";}
-        else if (showResult.innerHTML == "Rock") { idWinner.innerHTML = "Too bad! Computer wins.";}
-        else if (showResult.innerHTML == "Scissors") { idWinner.innerHTML = "No winners! It's a tie.";}
+    window.sessionStorage.setItem(performance.now(), "playerScissors");
+    if (showResult.innerHTML == "Paper") {
+        idWinner.innerHTML = "Congrats! You win.";
+        window.sessionStorage.setItem(performance.now()+1, "computerPaper");}
+        else if (showResult.innerHTML == "Rock") {
+            idWinner.innerHTML = "Too bad! Computer wins.";
+            window.sessionStorage.setItem(performance.now()+1, "computerRock");}
+        else if (showResult.innerHTML == "Scissors") {
+            idWinner.innerHTML = "No winners! It's a tie.";
+            window.sessionStorage.setItem(performance.now()+1, "computerScissors");}
     Emoji()
 }
 
@@ -20,9 +27,16 @@ PlayRock = () => {
     let showResult = document.getElementById("computerSelect");
     showResult.innerHTML = computer;
     idPlayerChoise.innerHTML = "Rock";
-    if (showResult.innerHTML == "Paper") { idWinner.innerHTML = "Too bad! Computer wins.";}
-        else if (showResult.innerHTML == "Rock") { idWinner.innerHTML = "No winners! It's a tie.";}
-        else if (showResult.innerHTML == "Scissors") { idWinner.innerHTML = "Congrats! You win.";}
+    window.sessionStorage.setItem(performance.now(), "playerRock");
+    if (showResult.innerHTML == "Paper") {
+        idWinner.innerHTML = "Too bad! Computer wins.";
+        window.sessionStorage.setItem(performance.now()+1, "computerPaper");}
+        else if (showResult.innerHTML == "Rock") {
+            idWinner.innerHTML = "No winners! It's a tie.";
+            window.sessionStorage.setItem(performance.now()+1, "computerRock");}
+        else if (showResult.innerHTML == "Scissors") {
+            idWinner.innerHTML = "Congrats! You win.";
+            window.sessionStorage.setItem(performance.now()+1, "computerScissors");}
     Emoji()
 }
 
@@ -31,9 +45,16 @@ PlayPaper = () => {
     let showResult = document.getElementById("computerSelect");
     showResult.innerHTML = computer;
     idPlayerChoise.innerHTML = "Paper";
-    if (showResult.innerHTML == "Paper") { idWinner.innerHTML = "No winners! It's a tie.";}
-        else if (showResult.innerHTML == "Rock") { idWinner.innerHTML = "Congrats! You win.";}
-        else if (showResult.innerHTML == "Scissors") { idWinner.innerHTML = "Too bad! Computer wins.";}
+    window.sessionStorage.setItem(performance.now(), "playerPaper");
+    if (showResult.innerHTML == "Paper") {
+        idWinner.innerHTML = "No winners! It's a tie.";
+        window.sessionStorage.setItem(performance.now()+1, "computerPaper");}
+        else if (showResult.innerHTML == "Rock") {
+            idWinner.innerHTML = "Congrats! You win.";
+            window.sessionStorage.setItem(performance.now()+1, "computerRock");}
+        else if (showResult.innerHTML == "Scissors") {
+            idWinner.innerHTML = "Too bad! Computer wins.";
+            window.sessionStorage.setItem(performance.now()+1, "computerScissors");}
     Emoji()
 }
 
@@ -97,7 +118,7 @@ PrivacyMessage = () => {
 
 ViewStats = () => {
     const data = Object.values(window.sessionStorage);
-    const games = data.length;
+    const games = data.length / 3;
     const playerWins = data.filter(CheckPlayerWins).length;
     const computerWins = data.filter(CheckComputerWins).length;
     const ties = data.filter(CheckTie).length;
