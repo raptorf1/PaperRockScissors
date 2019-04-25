@@ -113,7 +113,7 @@ Reset = () => {
 }
 
 PrivacyMessage = () => {
-    alert("Your privacy is of the utmost importance for us. All scores/stats data of the game, are only stored in the Session Storage of your browser and are deleted whenever you close the tab. No data is left on your device.");
+    alert("Your privacy is of the utmost importance for us. All scores/stats data of the game, are only stored in the Session Storage of your browser and are deleted whenever you close the tab. No data is left on your device. If you want to keep track of your stats, you can download the detailed CSV file provided.");
 }
 
 ViewStats = () => {
@@ -149,7 +149,7 @@ CSV = () => {
     const dataCSV = new Blob([sessionStats], {type: 'text/csv'});
     const url = window.URL.createObjectURL(dataCSV);
     document.getElementById('download_link').href = url;
-    }
+}
 
 function CheckComputerPaper (string) {return string == "computerPaper";}
 
