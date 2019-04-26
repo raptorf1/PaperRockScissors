@@ -4,57 +4,56 @@ const showResult = document.getElementById("computerSelect");
 const idPlayerChoise = document.getElementById("playerChoise");
 const idScorePlayer = document.getElementById("scorePlayer");
 const idScoreComputer = document.getElementById("scoreComputer");
+const storage = window.sessionStorage;
 
 PlayScissors = () => {
     var computer = choises[Math.floor(Math.random() * 30)];
     showResult.innerHTML = computer;
     idPlayerChoise.innerHTML = "Scissors";
-    window.sessionStorage.setItem(performance.now(), "playerScissors");
+    storage.setItem(performance.now(), "playerScissors");
     if (showResult.innerHTML == "Paper") {
         idWinner.innerHTML = "Congrats! You win.";
-        window.sessionStorage.setItem(performance.now()+1, "computerPaper");}
+        storage.setItem(performance.now()+1, "computerPaper");}
         else if (showResult.innerHTML == "Rock") {
             idWinner.innerHTML = "Too bad! Computer wins.";
-            window.sessionStorage.setItem(performance.now()+1, "computerRock");}
+            storage.setItem(performance.now()+1, "computerRock");}
         else if (showResult.innerHTML == "Scissors") {
             idWinner.innerHTML = "No winners! It's a tie.";
-            window.sessionStorage.setItem(performance.now()+1, "computerScissors");}
+            storage.setItem(performance.now()+1, "computerScissors");}
     Emoji()
 }
 
 PlayRock = () => {
     var computer = choises[Math.floor(Math.random() * 30)];
-    let showResult = document.getElementById("computerSelect");
     showResult.innerHTML = computer;
     idPlayerChoise.innerHTML = "Rock";
-    window.sessionStorage.setItem(performance.now(), "playerRock");
+    storage.setItem(performance.now(), "playerRock");
     if (showResult.innerHTML == "Paper") {
         idWinner.innerHTML = "Too bad! Computer wins.";
-        window.sessionStorage.setItem(performance.now()+1, "computerPaper");}
+        storage.setItem(performance.now()+1, "computerPaper");}
         else if (showResult.innerHTML == "Rock") {
             idWinner.innerHTML = "No winners! It's a tie.";
-            window.sessionStorage.setItem(performance.now()+1, "computerRock");}
+            storage.setItem(performance.now()+1, "computerRock");}
         else if (showResult.innerHTML == "Scissors") {
             idWinner.innerHTML = "Congrats! You win.";
-            window.sessionStorage.setItem(performance.now()+1, "computerScissors");}
+            storage.setItem(performance.now()+1, "computerScissors");}
     Emoji()
 }
 
 PlayPaper = () => {
     var computer = choises[Math.floor(Math.random() * 30)];
-    let showResult = document.getElementById("computerSelect");
     showResult.innerHTML = computer;
     idPlayerChoise.innerHTML = "Paper";
-    window.sessionStorage.setItem(performance.now(), "playerPaper");
+    storage.setItem(performance.now(), "playerPaper");
     if (showResult.innerHTML == "Paper") {
         idWinner.innerHTML = "No winners! It's a tie.";
-        window.sessionStorage.setItem(performance.now()+1, "computerPaper");}
+        storage.setItem(performance.now()+1, "computerPaper");}
         else if (showResult.innerHTML == "Rock") {
             idWinner.innerHTML = "Congrats! You win.";
-            window.sessionStorage.setItem(performance.now()+1, "computerRock");}
+            storage.setItem(performance.now()+1, "computerRock");}
         else if (showResult.innerHTML == "Scissors") {
             idWinner.innerHTML = "Too bad! Computer wins.";
-            window.sessionStorage.setItem(performance.now()+1, "computerScissors");}
+            storage.setItem(performance.now()+1, "computerScissors");}
     Emoji()
 }
 
@@ -63,23 +62,23 @@ Emoji = () => {
         document.getElementById("tie").style.display = "block";
         document.getElementById("playerWins").style.display = "none";
         document.getElementById("playerLooses").style.display = "none";
-        window.sessionStorage.setItem(Date.now(), "t");}
+        storage.setItem(Date.now(), "t");}
         else if (idWinner.innerHTML == "Congrats! You win.") {
             document.getElementById("playerWins").style.display = "block";
             document.getElementById("tie").style.display = "none";
             document.getElementById("playerLooses").style.display = "none";
-            window.sessionStorage.setItem(Date.now(), "p");}
+            storage.setItem(Date.now(), "p");}
         else if (idWinner.innerHTML == "Too bad! Computer wins.") {
             document.getElementById("playerLooses").style.display = "block";
             document.getElementById("tie").style.display = "none";
             document.getElementById("playerWins").style.display = "none";
-            window.sessionStorage.setItem(Date.now(), "c");}
+            storage.setItem(Date.now(), "c");}
     CalculatePoints()
     Thumbs()
 }
 
 CalculatePoints = () => {
-    var arr = Object.values(window.sessionStorage);
+    const arr = Object.values(storage);
     idScorePlayer.innerHTML = `Player ${arr.filter(CheckPlayerWins).length}`;
     idScoreComputer.innerHTML = `Computer ${arr.filter(CheckComputerWins).length}`;
 }
@@ -108,7 +107,7 @@ Thumbs = () => {
 }
 
 Reset = () => {
-    window.sessionStorage.clear();
+    storage.clear();
     window.location.reload(true);
 }
 
@@ -117,7 +116,7 @@ PrivacyMessage = () => {
 }
 
 ViewStats = () => {
-    const data = Object.values(window.sessionStorage);
+    const data = Object.values(storage);
     const games = data.length / 3;
     const playerWins = data.filter(CheckPlayerWins).length;
     const computerWins = data.filter(CheckComputerWins).length;
@@ -134,21 +133,26 @@ ViewStats = () => {
 }
 
 CSV = () => {
-    const CSV = Object.values(window.sessionStorage);
+    const CSV = Object.values(storage);
     const gamesCSV = CSV.length / 3;
-    const playerWinsCSV = CSV.filter(CheckPlayerWins).length;
-    const computerWinsCSV = CSV.filter(CheckComputerWins).length;
-    const tiesCSV = CSV.filter(CheckTie).length;
-    const playerPaperCSV = CSV.filter(CheckPlayerPaper).length;
-    const playerRockCSV = CSV.filter(CheckPlayerRock).length;
-    const playerScissorsCSV = CSV.filter(CheckPlayerScissors).length;
-    const computerPaperCSV = CSV.filter(CheckComputerPaper).length;
-    const computerRockCSV = CSV.filter(CheckComputerRock).length;
-    const computerScissorsCSV = CSV.filter(CheckComputerScissors).length;
-    const sessionStats = ["GamesPlayed", gamesCSV, "PlayerWins", playerWinsCSV, "ComputerWins", computerWinsCSV, "Ties", tiesCSV, "PlayerPaper", playerPaperCSV, "PlayerRock", playerRockCSV, "PlayerScissors", playerScissorsCSV, "ComputerPaper", computerPaperCSV, "ComputerRock", computerRockCSV, "ComputerScissors", computerScissorsCSV];
-    const dataCSV = new Blob([sessionStats], {type: 'text/csv'});
-    const url = window.URL.createObjectURL(dataCSV);
-    document.getElementById('download_link').href = url;
+    if (gamesCSV == 0) {
+        alert("No games are played yet. Start playing and good luck!");
+    }
+    if (gamesCSV > 0) {
+        const playerWinsCSV = CSV.filter(CheckPlayerWins).length;
+        const computerWinsCSV = CSV.filter(CheckComputerWins).length;
+        const tiesCSV = CSV.filter(CheckTie).length;
+        const playerPaperCSV = CSV.filter(CheckPlayerPaper).length;
+        const playerRockCSV = CSV.filter(CheckPlayerRock).length;
+        const playerScissorsCSV = CSV.filter(CheckPlayerScissors).length;
+        const computerPaperCSV = CSV.filter(CheckComputerPaper).length;
+        const computerRockCSV = CSV.filter(CheckComputerRock).length;
+        const computerScissorsCSV = CSV.filter(CheckComputerScissors).length;
+        const sessionStats = ["GamesPlayed", gamesCSV, "PlayerWins", playerWinsCSV, "ComputerWins", computerWinsCSV, "Ties", tiesCSV, "PlayerPaper", playerPaperCSV, "PlayerRock", playerRockCSV, "PlayerScissors", playerScissorsCSV, "ComputerPaper", computerPaperCSV, "ComputerRock", computerRockCSV, "ComputerScissors", computerScissorsCSV];
+        const dataCSV = new Blob([sessionStats], {type: 'text/csv'});
+        const url = window.URL.createObjectURL(dataCSV);
+        document.getElementById('download_link').href = url;
+    }
 }
 
 function CheckComputerPaper (string) {return string == "computerPaper";}
