@@ -40,3 +40,4 @@ This project is licensed under the MIT License.
 The World's Largest Web Developer Site.
 * [Tailwind](https://tailwindcss.com/docs/what-is-tailwind) - A utility-first CSS framework for rapidly building custom user interfaces.
 * [StackOverflow](https://stackoverflow.com/) - Learn, Share, Build.
+* [Shing Lyu](https://shinglyu.com/web/2019/02/09/js_download_as_file.html) - Download JavaScript Data as Files on the Client Side.
