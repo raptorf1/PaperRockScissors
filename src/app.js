@@ -135,24 +135,19 @@ ViewStats = () => {
 CSV = () => {
     const CSV = Object.values(storage);
     const gamesCSV = CSV.length / 3;
-    if (gamesCSV == 0) {
-        alert("No games are played yet. Start playing and good luck!");
-    }
-    if (gamesCSV > 0) {
-        const playerWinsCSV = CSV.filter(CheckPlayerWins).length;
-        const computerWinsCSV = CSV.filter(CheckComputerWins).length;
-        const tiesCSV = CSV.filter(CheckTie).length;
-        const playerPaperCSV = CSV.filter(CheckPlayerPaper).length;
-        const playerRockCSV = CSV.filter(CheckPlayerRock).length;
-        const playerScissorsCSV = CSV.filter(CheckPlayerScissors).length;
-        const computerPaperCSV = CSV.filter(CheckComputerPaper).length;
-        const computerRockCSV = CSV.filter(CheckComputerRock).length;
-        const computerScissorsCSV = CSV.filter(CheckComputerScissors).length;
-        const sessionStats = ["GamesPlayed", gamesCSV, "PlayerWins", playerWinsCSV, "ComputerWins", computerWinsCSV, "Ties", tiesCSV, "PlayerPaper", playerPaperCSV, "PlayerRock", playerRockCSV, "PlayerScissors", playerScissorsCSV, "ComputerPaper", computerPaperCSV, "ComputerRock", computerRockCSV, "ComputerScissors", computerScissorsCSV];
-        const dataCSV = new Blob([sessionStats], {type: 'text/csv'});
-        const url = window.URL.createObjectURL(dataCSV);
-        document.getElementById('download_link').href = url;
-    }
+    const playerWinsCSV = CSV.filter(CheckPlayerWins).length;
+    const computerWinsCSV = CSV.filter(CheckComputerWins).length;
+    const tiesCSV = CSV.filter(CheckTie).length;
+    const playerPaperCSV = CSV.filter(CheckPlayerPaper).length;
+    const playerRockCSV = CSV.filter(CheckPlayerRock).length;
+    const playerScissorsCSV = CSV.filter(CheckPlayerScissors).length;
+    const computerPaperCSV = CSV.filter(CheckComputerPaper).length;
+    const computerRockCSV = CSV.filter(CheckComputerRock).length;
+    const computerScissorsCSV = CSV.filter(CheckComputerScissors).length;
+    const sessionStats = ["GamesPlayed", gamesCSV, "PlayerWins", playerWinsCSV, "ComputerWins", computerWinsCSV, "Ties", tiesCSV, "PlayerPaper", playerPaperCSV, "PlayerRock", playerRockCSV, "PlayerScissors", playerScissorsCSV, "ComputerPaper", computerPaperCSV, "ComputerRock", computerRockCSV, "ComputerScissors", computerScissorsCSV];
+    const dataCSV = new Blob([sessionStats], {type: 'text/csv'});
+    const url = window.URL.createObjectURL(dataCSV);
+    document.getElementById('download_link').href = url;
 }
 
 function CheckComputerPaper (string) {return string == "computerPaper";}
