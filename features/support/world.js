@@ -44,12 +44,6 @@ class PaperRockScissorsWorld {
       case 'reset':
         return '#reset'
         break
-      case 'delete':
-        return '#button_card_delete'
-        break
-      case 'edit':
-        return '#button_card_edit'
-        break
       default:
         throw `${btnName} button is not defined`
         break
