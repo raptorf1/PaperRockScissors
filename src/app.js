@@ -13,13 +13,16 @@ PlayScissors = () => {
     storage.setItem(performance.now(), "playerScissors");
     if (showResult.innerHTML == "Paper") {
         idWinner.innerHTML = "Congrats! You win.";
-        storage.setItem(performance.now()+1, "computerPaper");}
-        else if (showResult.innerHTML == "Rock") {
-            idWinner.innerHTML = "Too bad! Computer wins.";
-            storage.setItem(performance.now()+1, "computerRock");}
-        else if (showResult.innerHTML == "Scissors") {
-            idWinner.innerHTML = "No winners! It's a tie.";
-            storage.setItem(performance.now()+1, "computerScissors");}
+        storage.setItem(performance.now()+1, "computerPaper");
+    }
+    else if (showResult.innerHTML == "Rock") {
+        idWinner.innerHTML = "Too bad! Computer wins.";
+        storage.setItem(performance.now()+1, "computerRock");
+    }
+    else if (showResult.innerHTML == "Scissors") {
+        idWinner.innerHTML = "No winners! It's a tie.";
+        storage.setItem(performance.now()+1, "computerScissors");
+    }
     Emoji()
 }
 
@@ -30,13 +33,16 @@ PlayRock = () => {
     storage.setItem(performance.now(), "playerRock");
     if (showResult.innerHTML == "Paper") {
         idWinner.innerHTML = "Too bad! Computer wins.";
-        storage.setItem(performance.now()+1, "computerPaper");}
-        else if (showResult.innerHTML == "Rock") {
-            idWinner.innerHTML = "No winners! It's a tie.";
-            storage.setItem(performance.now()+1, "computerRock");}
-        else if (showResult.innerHTML == "Scissors") {
-            idWinner.innerHTML = "Congrats! You win.";
-            storage.setItem(performance.now()+1, "computerScissors");}
+        storage.setItem(performance.now()+1, "computerPaper");
+    }
+    else if (showResult.innerHTML == "Rock") {
+        idWinner.innerHTML = "No winners! It's a tie.";
+        storage.setItem(performance.now()+1, "computerRock");
+    }
+    else if (showResult.innerHTML == "Scissors") {
+        idWinner.innerHTML = "Congrats! You win.";
+        storage.setItem(performance.now()+1, "computerScissors");
+    }
     Emoji()
 }
 
@@ -47,13 +53,16 @@ PlayPaper = () => {
     storage.setItem(performance.now(), "playerPaper");
     if (showResult.innerHTML == "Paper") {
         idWinner.innerHTML = "No winners! It's a tie.";
-        storage.setItem(performance.now()+1, "computerPaper");}
-        else if (showResult.innerHTML == "Rock") {
-            idWinner.innerHTML = "Congrats! You win.";
-            storage.setItem(performance.now()+1, "computerRock");}
-        else if (showResult.innerHTML == "Scissors") {
-            idWinner.innerHTML = "Too bad! Computer wins.";
-            storage.setItem(performance.now()+1, "computerScissors");}
+        storage.setItem(performance.now()+1, "computerPaper");
+    }
+    else if (showResult.innerHTML == "Rock") {
+        idWinner.innerHTML = "Congrats! You win.";
+        storage.setItem(performance.now()+1, "computerRock");
+    }
+    else if (showResult.innerHTML == "Scissors") {
+        idWinner.innerHTML = "Too bad! Computer wins.";
+        storage.setItem(performance.now()+1, "computerScissors");
+    }
     Emoji()
 }
 
@@ -62,17 +71,20 @@ Emoji = () => {
         document.getElementById("tie").style.display = "block";
         document.getElementById("playerWins").style.display = "none";
         document.getElementById("playerLooses").style.display = "none";
-        storage.setItem(Date.now(), "t");}
-        else if (idWinner.innerHTML == "Congrats! You win.") {
-            document.getElementById("playerWins").style.display = "block";
-            document.getElementById("tie").style.display = "none";
-            document.getElementById("playerLooses").style.display = "none";
-            storage.setItem(Date.now(), "p");}
-        else if (idWinner.innerHTML == "Too bad! Computer wins.") {
-            document.getElementById("playerLooses").style.display = "block";
-            document.getElementById("tie").style.display = "none";
-            document.getElementById("playerWins").style.display = "none";
-            storage.setItem(Date.now(), "c");}
+        storage.setItem(Date.now(), "t");
+    }
+    else if (idWinner.innerHTML == "Congrats! You win.") {
+        document.getElementById("playerWins").style.display = "block";
+        document.getElementById("tie").style.display = "none";
+        document.getElementById("playerLooses").style.display = "none";
+        storage.setItem(Date.now(), "p");
+    }
+    else if (idWinner.innerHTML == "Too bad! Computer wins.") {
+        document.getElementById("playerLooses").style.display = "block";
+        document.getElementById("tie").style.display = "none";
+        document.getElementById("playerWins").style.display = "none";
+        storage.setItem(Date.now(), "c");
+    }
     CalculatePoints()
     Thumbs()
 }
@@ -95,15 +107,18 @@ Thumbs = () => {
     if (computerNumber > PlayerNumber) {
         document.getElementById("thumbsDown").style.display = "block";
         document.getElementById("thumbsUp").style.display = "none";
-        document.getElementById("thumbsMiddle").style.display = "none";}
-        else if (computerNumber == PlayerNumber) {
-            document.getElementById("thumbsDown").style.display = "none";
-            document.getElementById("thumbsUp").style.display = "none";
-            document.getElementById("thumbsMiddle").style.display = "block";}
-        else {
-            document.getElementById("thumbsDown").style.display = "none";
-            document.getElementById("thumbsUp").style.display = "block";
-            document.getElementById("thumbsMiddle").style.display = "none";}
+        document.getElementById("thumbsMiddle").style.display = "none";
+    }
+    else if (computerNumber == PlayerNumber) {
+        document.getElementById("thumbsDown").style.display = "none";
+        document.getElementById("thumbsUp").style.display = "none";
+        document.getElementById("thumbsMiddle").style.display = "block";
+    }
+    else {
+        document.getElementById("thumbsDown").style.display = "none";
+        document.getElementById("thumbsUp").style.display = "block";
+        document.getElementById("thumbsMiddle").style.display = "none";
+    }
 }
 
 Reset = () => {
@@ -165,65 +180,96 @@ function CheckPlayerScissors (string) {return string == "playerScissors";}
 
 // Player VS Player
 
+const idPlayer1Choise = document.getElementById("player1Choise");
+const idWait = document.getElementById("wait");
+const idWinnerPVSP = document.getElementById("winnerPVSP");
+const idPlayer2Choise = document.getElementById("player2Choise");
 
 PlayScissors1 = () => {
-    document.getElementById("player1Choise").innerHTML = "Scissors";
-    Another();
+    idPlayer1Choise.innerHTML = "Scissors";
+    Player1Styles();
 }
 
 PlayPaper1 = () => {
-    document.getElementById("player1Choise").innerHTML = "Paper";
-    Another();
+    idPlayer1Choise.innerHTML = "Paper";
+    Player1Styles();
 }
 
 PlayRock1 = () => {
-    document.getElementById("player1Choise").innerHTML = "Rock";
-    Another();
+    idPlayer1Choise.innerHTML = "Rock";
+    Player1Styles();
 }
 
-Another = () => {
-    document.getElementById("wait").style.display = "block";
-setTimeout(function () {document.getElementById("player1Choise").style.display = "none";
-document.getElementById("wait").style.display = "none";}, 3000);
-setTimeout(function () {document.getElementById("scissors1").style.display = "none";
-document.getElementById("rock1").style.display = "none";
-document.getElementById("paper1").style.display = "none";
-  document.getElementById("scissors2").style.display = "inline";
-document.getElementById("rock2").style.display = "inline";
-document.getElementById("paper2").style.display = "inline";
-}, 3000);
+Player1Styles = () => {
+    idWait.style.display = "block";
+    setTimeout(function () {
+        idPlayer1Choise.style.display = "none";
+        idWait.style.display = "none";
+    }, 3000);
+    setTimeout(function () {
+        document.getElementById("scissors1").style.display = "none";
+        document.getElementById("rock1").style.display = "none";
+        document.getElementById("paper1").style.display = "none";
+        document.getElementById("scissors2").style.display = "inline";
+        document.getElementById("rock2").style.display = "inline";
+        document.getElementById("paper2").style.display = "inline";
+        }, 3000);
 }
 
 PlayScissors2 = () => {
-    document.getElementById("player2Choise").innerHTML = "Scissors";
-    if (document.getElementById("player1Choise").innerHTML == "Scissors") {
-      document.getElementById("winner").innerHTML = "It's a fucking tie!!!";}
-      else if (document.getElementById("player1Choise").innerHTML == "Paper") {
-        document.getElementById("winner").innerHTML = "Player 2 wins!!!";}
-        else if (document.getElementById("player1Choise").innerHTML == "Rock") {
-            document.getElementById("winner").innerHTML = "Player 1 wins"};
-    document.getElementById("player1Choise").style.display = "block";
-    setTimeout(function () {window.location.reload("true");}, 2000);}
+    idPlayer2Choise.innerHTML = "Scissors";
+    HidePlayer2();
+    if (idPlayer1Choise.innerHTML == "Scissors") {
+        idWinnerPVSP.innerHTML = "No winners. It's a tie!!!";
+    }
+    else if (idPlayer1Choise.innerHTML == "Paper") {
+        idWinnerPVSP.innerHTML = "Player 2 wins!!!";
+    }
+    else if (idPlayer1Choise.innerHTML == "Rock") {
+        idWinnerPVSP.innerHTML = "Player 1 wins";
+    }
+    idPlayer1Choise.style.display = "block";
+    Timeout();
+}
 
-    PlayPaper2 = () => {
-        document.getElementById("player2Choise").innerHTML = "Paper";
-        if (document.getElementById("player1Choise").innerHTML == "Scissors") {
-          document.getElementById("winner").innerHTML = "Player 1 wins!!!";}
-          else if (document.getElementById("player1Choise").innerHTML == "Paper") {
-            document.getElementById("winner").innerHTML = "tie!!!";}
-            else if (document.getElementById("player1Choise").innerHTML == "Rock") {
-                document.getElementById("winner").innerHTML = "Player 2 wins"};
-        document.getElementById("player1Choise").style.display = "block";
-        setTimeout(function () {window.location.reload("true");}, 2000);}
-    
-        PlayRock2 = () => {
-            document.getElementById("player2Choise").innerHTML = "Rock";
-            if (document.getElementById("player1Choise").innerHTML == "Scissors") {
-              document.getElementById("winner").innerHTML = "Player 2 wins!!!";}
-              else if (document.getElementById("player1Choise").innerHTML == "Paper") {
-                document.getElementById("winner").innerHTML = "Player 1 wins!!!";}
-                else if (document.getElementById("player1Choise").innerHTML == "Rock") {
-                    document.getElementById("winner").innerHTML = "tie"};
-            document.getElementById("player1Choise").style.display = "block";
-            setTimeout(function () {window.location.reload("true");}, 2000);}
-            
+PlayPaper2 = () => {
+    idPlayer2Choise.innerHTML = "Paper";
+    HidePlayer2();
+    if (idPlayer1Choise.innerHTML == "Scissors") {
+        idWinnerPVSP.innerHTML = "Player 1 wins!!!";
+    }
+    else if (idPlayer1Choise.innerHTML == "Paper") {
+        idWinnerPVSP.innerHTML = "No winners. It's a tie!!!";
+    }
+    else if (idPlayer1Choise.innerHTML == "Rock") {
+        idWinnerPVSP.innerHTML = "Player 2 wins";
+    }
+    idPlayer1Choise.style.display = "block";
+    Timeout();
+}
+
+PlayRock2 = () => {
+    idPlayer2Choise.innerHTML = "Rock";
+    HidePlayer2();
+    if (idPlayer1Choise.innerHTML == "Scissors") {
+        idWinnerPVSP.innerHTML = "Player 2 wins!!!";
+    }
+    else if (idPlayer1Choise.innerHTML == "Paper") {
+        idWinnerPVSP.innerHTML = "Player 1 wins!!!";
+    }
+    else if (idPlayer1Choise.innerHTML == "Rock") {
+        idWinnerPVSP.innerHTML = "No winners. It's a tie!!!";
+    }
+    idPlayer1Choise.style.display = "block";
+    Timeout();
+}
+
+Timeout = () => {
+    setTimeout(function () {window.location.reload("true");}, 2000);
+}
+
+HidePlayer2 = () => {
+    document.getElementById("scissors2").style.display = "none";
+    document.getElementById("rock2").style.display = "none";
+    document.getElementById("paper2").style.display = "none";
+}
