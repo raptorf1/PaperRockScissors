@@ -38,9 +38,9 @@
         <p id="wait" class="text-center" style="display:none">Wait for your choise to disappear</p>
         <br>
         <div class="ml-20">
-        <img id="scissors1" src="scissors.png" onclick="PlayScissors()" width="40"></img>
-        <img id="rock1" src="rock.png" onclick="PlayRock()" width="40"></img>
-        <img id="paper1" src="paper.png" onclick="PlayPaper()" width="40"></img>
+        <img id="scissors1" src="scissors.png" onclick="PlayScissors1()" width="40"></img>
+        <img id="rock1" src="rock.png" onclick="PlayRock1()" width="40"></img>
+        <img id="paper1" src="paper.png" onclick="PlayPaper1()" width="40"></img>
         </div>
       </div>
    
@@ -57,8 +57,8 @@
         <br>
         <div class="ml-20">
         <img id="scissors2" src="scissors.png" onclick="PlayScissors2()" style="display:none" width="40"></img>
-        <img id="rock2" src="rock.png" onclick="PlayRock()" style="display:none" width="40"></img>
-        <img id="paper2" src="paper.png" onclick="PlayPaper()" style="display:none" width="40"></img>
+        <img id="rock2" src="rock.png" onclick="PlayRock2()" style="display:none" width="40"></img>
+        <img id="paper2" src="paper.png" onclick="PlayPaper2()" style="display:none" width="40"></img>
         </div>
       </div>
 
@@ -66,40 +66,7 @@
     </div> 
   </div>
 
-  <script>
-    PlayScissors = () => {
-      document.getElementById("player1Choise").innerHTML = "Scissors";
-      document.getElementById("wait").style.display = "block";
-      setTimeout(function () {document.getElementById("player1Choise").style.display = "none";
-    document.getElementById("wait").style.display = "none";}, 3000);
-      setTimeout(function () {document.getElementById("scissors1").style.display = "none";
-      document.getElementById("rock1").style.display = "none";
-      document.getElementById("paper1").style.display = "none";
-        document.getElementById("scissors2").style.display = "inline";
-      document.getElementById("rock2").style.display = "inline";
-      document.getElementById("paper2").style.display = "inline";
-      }, 3000);
-    }
-
-    PlayScissors2 = () => {
-      document.getElementById("player2Choise").innerHTML = "Scissors";
-      if (document.getElementById("player1Choise").innerHTML == document.getElementById("player2Choise").innerHTML) {
-        document.getElementById("winner").innerHTML = "It's a fucking tie!!!";
-        document.getElementById("player1Choise").style.display = "block";
-        setTimeout(function () {window.location.reload("true");}, 2000);
-      }
-    }
-
-
-    
-  
-  
-  
-  
-  
-  
-  
-  </script>
+  <script src="./dist/bundle.js"></script>
 
 </body>
 

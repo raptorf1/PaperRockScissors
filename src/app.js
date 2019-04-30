@@ -161,3 +161,69 @@ function CheckPlayerPaper (string) {return string == "playerPaper";}
 function CheckPlayerRock (string) {return string == "playerRock";}
 
 function CheckPlayerScissors (string) {return string == "playerScissors";}
+
+
+// Player VS Player
+
+
+PlayScissors1 = () => {
+    document.getElementById("player1Choise").innerHTML = "Scissors";
+    Another();
+}
+
+PlayPaper1 = () => {
+    document.getElementById("player1Choise").innerHTML = "Paper";
+    Another();
+}
+
+PlayRock1 = () => {
+    document.getElementById("player1Choise").innerHTML = "Rock";
+    Another();
+}
+
+Another = () => {
+    document.getElementById("wait").style.display = "block";
+setTimeout(function () {document.getElementById("player1Choise").style.display = "none";
+document.getElementById("wait").style.display = "none";}, 3000);
+setTimeout(function () {document.getElementById("scissors1").style.display = "none";
+document.getElementById("rock1").style.display = "none";
+document.getElementById("paper1").style.display = "none";
+  document.getElementById("scissors2").style.display = "inline";
+document.getElementById("rock2").style.display = "inline";
+document.getElementById("paper2").style.display = "inline";
+}, 3000);
+}
+
+PlayScissors2 = () => {
+    document.getElementById("player2Choise").innerHTML = "Scissors";
+    if (document.getElementById("player1Choise").innerHTML == "Scissors") {
+      document.getElementById("winner").innerHTML = "It's a fucking tie!!!";}
+      else if (document.getElementById("player1Choise").innerHTML == "Paper") {
+        document.getElementById("winner").innerHTML = "Player 2 wins!!!";}
+        else if (document.getElementById("player1Choise").innerHTML == "Rock") {
+            document.getElementById("winner").innerHTML = "Player 1 wins"};
+    document.getElementById("player1Choise").style.display = "block";
+    setTimeout(function () {window.location.reload("true");}, 2000);}
+
+    PlayPaper2 = () => {
+        document.getElementById("player2Choise").innerHTML = "Paper";
+        if (document.getElementById("player1Choise").innerHTML == "Scissors") {
+          document.getElementById("winner").innerHTML = "Player 1 wins!!!";}
+          else if (document.getElementById("player1Choise").innerHTML == "Paper") {
+            document.getElementById("winner").innerHTML = "tie!!!";}
+            else if (document.getElementById("player1Choise").innerHTML == "Rock") {
+                document.getElementById("winner").innerHTML = "Player 2 wins"};
+        document.getElementById("player1Choise").style.display = "block";
+        setTimeout(function () {window.location.reload("true");}, 2000);}
+    
+        PlayRock2 = () => {
+            document.getElementById("player2Choise").innerHTML = "Rock";
+            if (document.getElementById("player1Choise").innerHTML == "Scissors") {
+              document.getElementById("winner").innerHTML = "Player 2 wins!!!";}
+              else if (document.getElementById("player1Choise").innerHTML == "Paper") {
+                document.getElementById("winner").innerHTML = "Player 1 wins!!!";}
+                else if (document.getElementById("player1Choise").innerHTML == "Rock") {
+                    document.getElementById("winner").innerHTML = "tie"};
+            document.getElementById("player1Choise").style.display = "block";
+            setTimeout(function () {window.location.reload("true");}, 2000);}
+            
