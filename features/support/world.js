@@ -44,6 +44,21 @@ class PaperRockScissorsWorld {
       case 'reset':
         return '#reset'
         break
+      case 'player vs player mode':
+        return '#pvsp'
+        break
+      case 'scissors1':
+        return '#scissors1'
+        break
+      case 'rock1':
+        return '#rock1'
+        break
+      case 'paper1':
+        return '#paper1'
+        break
+      case 'player vs computer mode':
+        return '#pvscmode'
+        break
       default:
         throw `${btnName} button is not defined`
         break
