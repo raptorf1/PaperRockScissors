@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.4.3",
-    "babel-loader": "^8.0.5"
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "7.1.5"    
   }
 }
