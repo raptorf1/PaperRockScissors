@@ -4,7 +4,9 @@ The famous Paper Rock Scissors game as part of a hiring process simulation under
 
 # Deployment & Privacy
 
-You can visit the deployed website [here](https://gt-paper-rock-scissors.netlify.com/).
+You can visit the deployed website [here](https://raptorf1.github.io/PaperRockScissors/).
+
+This project was completed on May 1st. All the styling was done using the Tailwind CDN framework (version 0.74). Due to Tailwind's update to version 1.0, most of the styling is unavailable now. Hence the current look of the page.
 
 All the stats shown in the website, are being temporarily saved in the Session Storage of your browser. When the tab is closed, everything is deleted and nothing is permanently saved without your consent.
 
